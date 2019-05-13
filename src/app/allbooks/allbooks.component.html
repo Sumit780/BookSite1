@@ -1,0 +1,29 @@
+<div>
+    {{pageInfo?.pageNumber * pageInfo?.numOfItems + 1 -10}} to {{pageInfo?.pageNumber * pageInfo?.numOfItems}} of {{pageInfo?.totalItemCount}}
+    <div class="text-center mt-4">
+        <div class="row bg-primary text-white">
+            <div class="col-4 border">Title</div>
+            <div class="col-3 border">Aurthor</div>
+            <div class="col-2 border">Language</div>
+            <div class="col-1 border">Genre</div>
+            <div class="col-1 border">Price</div>
+            <div class="col-1 border">bestSeller</div>
+        </div>
+        <div class="row" *ngFor='let c of allBooksData'>
+            <div class="col-4 border">{{c.name}}</div>
+            <div class="col-3 border">{{c.author}}</div>
+            <div class="col-2 border">{{c.language}}</div>
+            <div class="col-1 border">{{c.genre}}</div>
+            <div class="col-1 border">{{c.price}}</div>
+            <div class="col-1 border">{{c.bestseller}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1 m-2" *ngIf="precheck">
+            <button (click)="previousPage()" class="btn btn-primary"> Previous</button>
+        </div>
+        <div class="col-2 m-2" *ngIf="nextcheck">
+            <button (click)="nextPage()" class="btn btn-primary"> Next</button>
+        </div>
+    </div>
+</div>
